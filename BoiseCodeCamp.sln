@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bcc.Data", "Source\Bcc.Data
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bcc.Business", "Source\Bcc.Business\Bcc.Business.csproj", "{CF70BDED-80B7-4D34-BB5F-64FD6C0E32E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bcc.Auth", "Source\Bcc.Auth\Bcc.Auth.csproj", "{389F2A22-5689-40D2-849B-F1152A87921A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CF70BDED-80B7-4D34-BB5F-64FD6C0E32E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF70BDED-80B7-4D34-BB5F-64FD6C0E32E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF70BDED-80B7-4D34-BB5F-64FD6C0E32E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{389F2A22-5689-40D2-849B-F1152A87921A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389F2A22-5689-40D2-849B-F1152A87921A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389F2A22-5689-40D2-849B-F1152A87921A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389F2A22-5689-40D2-849B-F1152A87921A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
