@@ -12,7 +12,7 @@ namespace Bcc.Business.Commands
 
         [Required, MaxLength(50)]
         public string Name { get; set; }
-        public string Image { get; set; } // could do a lot with this, including Azure Functions to give us back the sizes we want
+        public string Image { get; set; }
     }
 
     public class UpdateOrganizationCommand : CreateOrganizationCommand
@@ -30,4 +30,10 @@ namespace Bcc.Business.Commands
         public OrganizationRole Role { get; set; }
     }
 
+    public class CreateSponsorshipCommand
+    {
+        public int OrganizationId { get; set; }
+        public SponsorLevel SponsorLevel { get; set; }
+        public int ConferenceId { get; set; }
+    }
 }

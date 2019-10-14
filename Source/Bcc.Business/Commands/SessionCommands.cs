@@ -10,11 +10,11 @@ namespace Bcc.Business.Commands
     public class CreateSessionCommand
     {
         public string Title { get; set; }
+
         [Required, MaxLength(150)]
-
         public string Description { get; set; }
-        [Required, MaxLength(5000)]
 
+        [Required, MaxLength(5000)]
         public string Overview { get; set; }
 
         public RequestedTimeFrame RequestedTimeFrame { get; set; }
