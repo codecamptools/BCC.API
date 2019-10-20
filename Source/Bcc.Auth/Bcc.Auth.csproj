@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-Bcc.Auth-21BFEABE-CE67-4DD6-A0BE-8BBEC8CF3B89</UserSecretsId>
+    <UserSecretsId>aspnet-Bcc.Auth-B451FA2D-2AC5-4F4B-BEED-E655D5A46CEF</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 

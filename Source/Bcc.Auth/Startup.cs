@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Bcc.Auth.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Bcc.Auth
 {
@@ -42,7 +43,32 @@ namespace Bcc.Auth
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+            ConfigureAuthServices(services);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
+
+        private void ConfigureAuthServices(IServiceCollection services)
+        {
+            //services.Configure<CookiePolicyOptions>(options =>
+            //{
+            //    options.CheckConsentNeeded = context => true;
+            //    options.MinimumSameSitePolicy = SameSiteMode.None;
+            //    options.ConsentCookie.Name = "cookieconsent_status";
+            //});
+
+            services.AddAuthentication()
+            .AddGoogle(options =>
+            {
+                options.ClientId = Configuration["Authentication:Google:ClientId"];
+                options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
+            });
+
+            //.AddGitHub(options =>
+            //{
+            //    options.ClientId = "49e302895d8b09ea5656";
+            //    options.ClientSecret = "98f1bf028608901e9df91d64ee61536fe562064b";
+            //    options.Scope.Add("user:email");
+            //})
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
