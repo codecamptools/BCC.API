@@ -10,16 +10,17 @@ namespace Bcc.Api.Controllers
     [ApiController]
     public class PersonsController : CommandController
     {
-        private readonly IPersonService _personService;
+        private readonly CommandService _commandService;
 
-        public PersonsController(IPersonService personService)
+        public PersonsController(CommandService commandService)
         {
-            _personService = personService;
+            _commandService = commandService;
         }
-        [HttpPost("comment")]
-        public async Task<IActionResult> WriteMemo([FromBody]UpdatePersonProfileCommand command)
+        
+        [HttpPost("updateProfile")]
+        public async Task<IActionResult> UpdateProfile([FromBody]UpdatePersonProfileCommand command)
         {
-            var result = await HandleCommandAsync(command, _personService.UpdatePersonProfile);
+            var result = await HandleCommandAsync(command, _commandService.UpdatePersonProfile);
             return result;
         }
     }

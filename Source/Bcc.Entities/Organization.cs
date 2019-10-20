@@ -9,8 +9,10 @@ namespace Bcc.Entities
         [MaxLength(50)]
         public string Name { get; set; }
         public string Image { get; set; } // could do a lot with this, including Azure Functions to give us back the sizes we want
-        public List<Sponsorship> Sponsorships { get; set; }
+        public List<Sponsor> Sponsorships { get; set; }
         public ICollection<Speaker> Speakers { get; set; }
+        [MaxLength(5000)]
+        public string Description { get; set; }
     }
 
     public enum SponsorLevel

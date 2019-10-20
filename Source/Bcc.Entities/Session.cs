@@ -14,9 +14,7 @@ namespace Bcc.Entities
         public string Description { get; set; }
         [MaxLength(5000)]
         public string Overview { get; set; }
-
         public RequestedTimeFrame RequestedTimeFrame { get; set; }
-
         public SessionStatus Status { get; set; }
         public int? OrganizationId { get; set; }
         public Organization Organization { get; set; }

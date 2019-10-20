@@ -7,7 +7,7 @@ using Bcc.Entities;
 
 namespace Bcc.Business.Commands
 {
-    public class CreateSessionCommand
+    public class CreateSessionCommand : CommandBase
     {
         public string Title { get; set; }
 
@@ -20,6 +20,7 @@ namespace Bcc.Business.Commands
         public RequestedTimeFrame RequestedTimeFrame { get; set; }
 
         public int? OrganizationId { get; set; }
+
     }
 
     public class UpdateSessionCommand : CreateSessionCommand
@@ -28,8 +29,9 @@ namespace Bcc.Business.Commands
         public int SessionId { get; set; }
     }
 
-    public class SetSessionStatusCommand
+    public class SetSessionStatusCommand : CommandBase
     {
+        [NonZero]
         public int SessionId { get; set; }
         public SessionStatus SessionStatus { get; set; }
     }

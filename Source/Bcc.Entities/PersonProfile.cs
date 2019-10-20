@@ -5,6 +5,8 @@ namespace Bcc.Entities
     public class PersonProfile : DbEntity
     {
         public int Id { get; set; }
+        public Person Person { get; set; }
+
         [MaxLength(30)]
         public string FirstName { get; set; }
         [MaxLength(30)]
