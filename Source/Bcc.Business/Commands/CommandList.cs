@@ -16,7 +16,7 @@ namespace Bcc.Business.Commands
         CreateOrganizationCommand CreateOrganizationCommand { get; set; }
         UpdateOrganizationCommand UpdateOrganizationCommand { get; set; }
         SetPersonOrganizationRoleCommand SetPersonOrganizationRoleCommand { get; set; }
-        CreateSponsorshipCommand CreateSponsorshipCommand { get; set; }
+        SetSponsorshipCommand SetSponsorshipCommand { get; set; }
 
         // Person
         UpdatePersonProfileCommand UpdatePersonProfileCommand { get; set; }
@@ -38,7 +38,7 @@ namespace Bcc.Business.Commands
         Task<CommandResult<int>> CreateOrganization(CreateOrganizationCommand cmd);
         Task<CommandResult> UpdateOrganization(UpdateOrganizationCommand cmd);
         Task<CommandResult> SetPersonOrganizationRole(SetPersonOrganizationRoleCommand cmd);
-        Task<CommandResult> CreateSponsership(CreateSponsorshipCommand cmd);
+        Task<CommandResult> SetSponsorship(SetSponsorshipCommand cmd);
 
         // Person
         Task<CommandResult> UpdatePersonProfile(UpdatePersonProfileCommand cmd);

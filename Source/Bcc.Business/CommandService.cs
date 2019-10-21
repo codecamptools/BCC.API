@@ -57,7 +57,7 @@ namespace Bcc.Business
             throw new NotImplementedException();
         }
 
-        public async Task<CommandResult> CreateSponsership(CreateSponsorshipCommand cmd)
+        public async Task<CommandResult> SetSponsorship(SetSponsorshipCommand cmd)
         {
             // todo auth
             var sponsorship = await _db.Sponsor.FirstOrDefaultAsync(x => x.ConferenceId == cmd.ConferenceId && x.OrganizationId == cmd.OrganizationId);

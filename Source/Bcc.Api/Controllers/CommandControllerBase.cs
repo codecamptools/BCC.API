@@ -10,16 +10,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace Bcc.Api.Controllers
 {
     [Authorize]
-    public abstract class CommandController : ControllerBase
+    public abstract class CommandControllerBase : ControllerBase
     {
         //private readonly IUserService _userService;
 
-        public CommandController()
+        protected CommandControllerBase()
         {
             //_userService = userService;
         }
 
-        public async Task<IActionResult> HandleCommandAsync<T, TK>(T command, Func<T, Task<TK>> action,
+        protected async Task<IActionResult> HandleCommandAsync<T, TK>(T command, Func<T, Task<TK>> action,
             int retriesRemaining = 0, int delayMsAfterRetry = 100) where T : CommandBase where TK : CommandResult
         {
             if (command == null) throw new ArgumentNullException(nameof(command));

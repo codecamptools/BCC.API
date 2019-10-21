@@ -32,7 +32,7 @@ namespace Bcc.Business.Commands
         public OrganizationRole Role { get; set; }
     }
 
-    public class CreateSponsorshipCommand : CommandBase
+    public class SetSponsorshipCommand : CommandBase
     {
         [NonZero]
         public int OrganizationId { get; set; }
