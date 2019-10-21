@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Bcc.Business.Helpers;
 using Bcc.Entities;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 namespace Bcc.Business.Commands
 {
@@ -17,6 +20,7 @@ namespace Bcc.Business.Commands
         [Required, MaxLength(5000)]
         public string Overview { get; set; }
 
+        [JsonConverter(typeof(StringEnumConverter))]
         public RequestedTimeFrame RequestedTimeFrame { get; set; }
 
         public int? OrganizationId { get; set; }
@@ -33,6 +37,8 @@ namespace Bcc.Business.Commands
     {
         [NonZero]
         public int SessionId { get; set; }
+        [JsonConverter(typeof(StringEnumConverter))]
+       
         public SessionStatus SessionStatus { get; set; }
     }
 }

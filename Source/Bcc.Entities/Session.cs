@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace Bcc.Entities
@@ -14,12 +15,14 @@ namespace Bcc.Entities
         public string Description { get; set; }
         [MaxLength(5000)]
         public string Overview { get; set; }
+        [Column(TypeName = "nvarchar(24)")]
         public RequestedTimeFrame RequestedTimeFrame { get; set; }
+        [Column(TypeName = "nvarchar(24)")]
         public SessionStatus Status { get; set; }
         public int? OrganizationId { get; set; }
         public Organization Organization { get; set; }
         public int SpeakerId { get; set; }
-        public Speaker Speaker { get; set; }
+        public Person Speaker { get; set; }
         public int ScheduleId { get; set; }
         public ScheduledSession Schedule { get; set; }
         public int ConferenceId { get; set; }

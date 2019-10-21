@@ -9,7 +9,6 @@ namespace Bcc.Data
 {
     public class BccDbContext : DbContext
     {
-        public DbSet<Speaker> Speakers { get; set; }
         public DbSet<Conference> Conferences { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<OrganizationMembers> OrganizationMembers { get; set; }
@@ -20,7 +19,7 @@ namespace Bcc.Data
 
         public async Task<Conference> GetActiveConference()
         {
-            return await Conferences.Where(x => x.Date > DateTime.Now).OrderBy(x => x.Date).FirstOrDefaultAsync();
+            return await Conferences.Where(x => x.Date >= DateTime.Today).OrderBy(x => x.Date).FirstOrDefaultAsync();
         }
     }
 }

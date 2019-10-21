@@ -56,5 +56,6 @@ namespace Bcc.Api.Controllers
         [HttpPost("SetSessionStatus")]
         public async Task<IActionResult> SetSessionStatus([FromBody]SetSessionStatusCommand command) => 
             await HandleCommandAsync(command, _commandService.SetSessionStatus);
+
     }
 }
